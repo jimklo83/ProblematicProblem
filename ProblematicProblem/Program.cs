@@ -14,7 +14,19 @@ namespace ProblematicProblem
     Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
             //var cont = bool.Parse(Console.ReadLine());
             string yesOrNo = Console.ReadLine();
-            cont = yesOrNo == "yes";
+            if (yesOrNo.ToLower() == "no")
+            {
+                cont = false;
+            }
+            else 
+            { 
+                cont = true; 
+            }
+            if (!cont) 
+            {
+                Console.WriteLine("Goodbye!");
+                Environment.Exit(0);
+            }
     Console.WriteLine();
     Console.Write("We are going to need your information first! What is your name? ");
     string userName = Console.ReadLine();
@@ -49,6 +61,7 @@ namespace ProblematicProblem
             Console.WriteLine();
             Console.WriteLine("Would you like to add more? yes/no: ");
             addToList = (Console.ReadLine());
+                   
         }
     }
 
